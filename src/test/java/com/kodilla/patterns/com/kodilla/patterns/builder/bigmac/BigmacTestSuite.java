@@ -8,36 +8,21 @@ import org.junit.Test;
 public class BigmacTestSuite {
 
     @Test
-    public void testBigMacIngredients() {
+    public void testNewBigMac() {
         //Given
-        Bigmac bigmac = new Bigmac("WithSesame", 2, "Cheese", "Cucomber", "Salad", "Tomato");
+        Bigmac bigmac = new Bigmac.BigmacBuilder()
+                .bun("WithSesame")
+                .burgers(2)
+                .ingredient("Cheese")
+                .ingredient("Cucomber")
+                .ingredient("Salad")
+                .ingredient("Tomato")
+                .build();
         System.out.println(bigmac);
         //When
-        int ingredientsQty = bigmac.getIngredients().size();
+        int ingredientQTY = bigmac.getIngredients().size();
         //Then
-        Assert.assertEquals(4, ingredientsQty);
-    }
-
-    @Test
-    public void testBigMacBun() {
-        //Given
-        Bigmac bigmac = new Bigmac("WithSesame", 2, "Cheese", "Cucomber", "Salad", "Tomato");
-        System.out.println(bigmac);
-        //When
-        String bunType = bigmac.getBun();
-        //Then
-        Assert.assertEquals("WithSesame", bunType);
-    }
-
-    @Test
-    public void testBigMacBurgersQTY() {
-        //Given
-        Bigmac bigmac = new Bigmac("WithSesame", 2, "Cheese", "Cucomber", "Salad", "Tomato");
-        System.out.println(bigmac);
-        //When
-        int burgersQty = bigmac.getBurgers();
-        //Then
-        Assert.assertEquals(2, burgersQty);
+        Assert.assertEquals(4, ingredientQTY);
     }
 }
 

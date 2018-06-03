@@ -3,18 +3,42 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public final class Bigmac {
+    public final class Bigmac {
     private final String bun;
     private final int burgers;
-    private final List<String> ingredients = new ArrayList<>();
+    private final List<String> ingredients;
 
-    public Bigmac(final String bun, final int burgers, final String... ingredients) {
-        this.bun = bun;
-        this.burgers = burgers;
-        for (int n = 0; n < ingredients.length; n++) {
-            this.ingredients.add(ingredients[n]);
+    public static class BigmacBuilder {
+        private String bun;
+        private int burgers;
+        private List<String> ingredients = new ArrayList<>();
+
+
+        public BigmacBuilder bun(String bun) {
+            this.bun = bun;
+            return this;
+        }
+
+        public BigmacBuilder burgers(int burgers) {
+            this.burgers = burgers;
+            return this;
+        }
+
+        public BigmacBuilder ingredient(String ingredient) {
+            ingredients.add(ingredient);
+            return this;
+        }
+
+        public Bigmac build() {
+            return new Bigmac(bun, burgers, ingredients);
         }
     }
+
+    public Bigmac(final String bun, final int burgers, final List<String> ingredients) {
+        this.bun = bun;
+        this.burgers = burgers;
+        this.ingredients = new ArrayList<>(ingredients);
+        }
 
     public String getBun() {
         return bun;

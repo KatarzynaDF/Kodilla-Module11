@@ -1,9 +1,7 @@
-<<<<<<< HEAD
-package com.kodilla.patterns.singleto
-=======
+
 package com.kodilla.patterns.singleton;
 
->>>>>>> 70174686a1326c49830dd5c0618577920caf1403
+
 import org.junit.AfterClass;
 import org.junit.Assert;
 import org.junit.BeforeClass;
@@ -31,7 +29,6 @@ public class LoggerTestSuite {
         //Then
         Assert.assertEquals("User logged in", logger.getInstance().getLastLog());
     }
-<<<<<<< HEAD
 
     @Test
     public void testGetLastLogwhenTwiceLogged() {
@@ -43,7 +40,5 @@ public class LoggerTestSuite {
         Assert.assertEquals("What do you want to do?", logger.getInstance().getLastLog());
     }
 }
-=======
-}
 
->>>>>>> 70174686a1326c49830dd5c0618577920caf1403
+
