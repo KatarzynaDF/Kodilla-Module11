@@ -13,6 +13,10 @@
 
 ### IntelliJ IDEA ###
 .idea
+<<<<<<< HEAD
+=======
+.libraries
+>>>>>>> 70174686a1326c49830dd5c0618577920caf1403
 *.iws
 *.iml
 *.ipr
